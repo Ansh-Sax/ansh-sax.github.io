@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansh Saxena | Princeton University</title>
+    
+    <!-- IMPORT OPEN SANS FOR THE NAVIGATION -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* BASE STYLES */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #fff;
+            color: #111; 
+            margin: 0;
+            padding: 0;
+            font-size: 21px; 
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* LAYOUT CONTAINER */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        /* HEADER & NAV */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4rem;
+        }
+
+        /* NAME STYLING */
+        .name-link {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            letter-spacing: -0.5px;
+        }
+
+        /* NAVIGATION TABS */
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-family: "Open Sans", Helvetica, Arial, sans-serif;
+            font-size: 0.95rem;
+            color: #888;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #444;
+        }
+
+        nav a.active {
+            color: #000;
+            font-weight: 600;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
+        }
+
+        /* CONTENT STYLING */
+        p {
+            margin-bottom: 1.4rem;
+        }
+
+        /* IN-TEXT LINKS */
+        .tab-content a {
+            color: inherit; 
+            text-decoration: none; 
+            transition: color 0.2s ease;
+        }
+
+        .tab-content a:hover {
+            color: #C04000; /* Mahogany Color */
+            cursor: pointer;
+        }
+
+        /* CV SPECIFIC STYLES */
+        .cv-section-title {
+            font-weight: bold;
+            font-size: 1.5rem; /* Increased size further */
+            margin-bottom: 1.2rem;
+            margin-top: 0; /* Remove top margin for the first title */
+        }
+
+        .cv-entry {
+            margin-bottom: 1.5rem;
+        }
+
+        .cv-entry-line {
+            margin-bottom: 0.2rem;
+        }
+
+        /* New class for indented details with a dash */
+        .cv-entry-detail {
+            margin-bottom: 0.2rem;
+            margin-left: 2rem;
+        }
+
+        .cv-entry-detail::before {
+            content: "- ";
+        }
+
+        /* TAB LOGIC */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeEffect 0.4s;
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: 0; transform: translateY(5px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            nav {
+                width: 100%;
+                gap: 20px;
+                padding-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <!-- Name -->
+            <div class="name-link" onclick="openTab('home')">Ansh Saxena</div>
+            
+            <!-- Tabs -->
+            <nav>
+                <a onclick="openTab('cv')" id="btn-cv">CV</a>
+                <a onclick="openTab('publications')" id="btn-publications">Publications</a>
+                <a onclick="openTab('talks')" id="btn-talks">Talks</a>
+                <a onclick="openTab('blog')" id="btn-blog">Blog</a>
+            </nav>
+        </header>
+
+        <!-- HOME TAB -->
+        <div id="home" class="tab-content active">
+            <p>
+                I am a second year PhD student in the Mathematics Department at Princeton University, advised by <a href="https://sites.google.com/view/bbringmann/home?authuser=0" target="_blank">Bjoern Bringmann</a>. I can be reached at as6922 at princeton dot edu.
+            </p>
+            <p>
+                Earlier, I was an undergrad at NYU advised by <a href="https://www.scottnarmstrong.com/" target="_blank">Scott Armstrong</a> and <a href="https://cims.nyu.edu/~bourgade/" target="_blank">Paul Bourgade</a>. Earlier still, I was (training to be) a chemical engineer.
+            </p>
+            <p>
+                My research interests lie in the intersection of probability theory and PDEs / number theory.
+            </p>
+        </div>
+
+        <!-- CV TAB -->
+        <div id="cv" class="tab-content">
+            <div class="cv-section-title">Education</div>
+
+            <!-- Princeton -->
+            <div class="cv-entry">
+                <div class="cv-entry-line">
+                    <i>Princeton University</i>, Ph.D. in Mathematics (2024-current)
+                </div>
+                <div class="cv-entry-detail">
+                    Advised by <a href="https://sites.google.com/view/bbringmann/home?authuser=0" target="_blank">Bjoern Bringmann</a>
+                </div>
+            </div>
+
+            <!-- NYU -->
+            <div class="cv-entry">
+                <div class="cv-entry-line">
+                    <i>New York University</i>, B.A. in Mathematics with Honors (2021-2024)
+                </div>
+                <div class="cv-entry-detail">
+                    Advised by <a href="https://www.scottnarmstrong.com/" target="_blank">Scott Armstrong</a> and <a href="https://cims.nyu.edu/~bourgade/" target="_blank">Paul Bourgade</a>
+                </div>
+                <div class="cv-entry-detail">
+                    Awarded the <a href="https://math.nyu.edu/dynamic/undergrad/ba-cas/undergraduate-awards/#:~:text=Hollis%20Cooley%20Memorial%20Prize,for%20exceptional%20promise%20in%20mathematics." target="_blank">Hollis Cooley Memorial Prize</a>
+                </div>
+            </div>
+
+            <!-- MNIT Jaipur -->
+            <div class="cv-entry">
+                <div class="cv-entry-line">
+                    <i>Malaviya National Institute of Technology Jaipur</i>, B.Tech. in Chemical Engineering (2020-2021)
+                </div>
+                <div class="cv-entry-detail">
+                    Transferred after first year to NYU
+                </div>
+            </div>
+        </div>
+
+        <div id="publications" class="tab-content">
+            <h2>Publications</h2>
+        </div>
+
+        <div id="talks" class="tab-content">
+            <h2>Talks</h2>
+        </div>
+
+        <div id="blog" class="tab-content">
+            <h2>Blog</h2>
+        </div>
+
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            for (i = 0; i < x.length; i++) {
+                x[i].classList.remove("active");
+            }
+            
+            var navs = document.querySelectorAll("nav a");
+            for (i = 0; i < navs.length; i++) {
+                navs[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            
+            if(tabName !== 'home') {
+                 document.getElementById("btn-" + tabName).classList.add("active");
+            }
+        }
+    </script>
+
+</body>
+</html>
